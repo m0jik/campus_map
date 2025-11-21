@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'screens/outdoor_map_screen.dart';
 
 void main() => runApp(const CampusMapApp());
 
@@ -8,26 +9,9 @@ class CampusMapApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Campus Map Demo',
-      theme: ThemeData(primarySwatch: Colors.blue),
-      home: const MapHomePage(),
-    );
-  }
-}
-
-class MapHomePage extends StatelessWidget {
-  const MapHomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Campus Map')),
-      body: const Center(
-        child: Text(
-          'Hello iOS Build!',
-          style: TextStyle(fontSize: 24),
-        ),
-      ),
+      title: 'SIUE Campus Map',
+      theme: ThemeData(primarySwatch: Colors.red),
+      home: const OutdoorMapScreen(),
     );
   }
 }

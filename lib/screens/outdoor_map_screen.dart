@@ -14,10 +14,18 @@ class _OutdoorMapScreenState extends State<OutdoorMapScreen> {
   double _overlayOpacity = 0.0;
 
   LatLngBounds boundsFromPolygon(List<LatLng> polygon) {
-    final minLat = polygon.map((p) => p.latitude).reduce((a, b) => a < b ? a : b);
-    final maxLat = polygon.map((p) => p.latitude).reduce((a, b) => a > b ? a : b);
-    final minLng = polygon.map((p) => p.longitude).reduce((a, b) => a < b ? a : b);
-    final maxLng = polygon.map((p) => p.longitude).reduce((a, b) => a > b ? a : b);
+    final minLat = polygon
+        .map((p) => p.latitude)
+        .reduce((a, b) => a < b ? a : b);
+    final maxLat = polygon
+        .map((p) => p.latitude)
+        .reduce((a, b) => a > b ? a : b);
+    final minLng = polygon
+        .map((p) => p.longitude)
+        .reduce((a, b) => a < b ? a : b);
+    final maxLng = polygon
+        .map((p) => p.longitude)
+        .reduce((a, b) => a > b ? a : b);
     return LatLngBounds(LatLng(minLat, minLng), LatLng(maxLat, maxLng));
   }
 
@@ -35,7 +43,7 @@ class _OutdoorMapScreenState extends State<OutdoorMapScreen> {
           onPositionChanged: (camera, hasGesture) {
             final zoom = camera.zoom;
 
-            double newOpacity = ((zoom - 19) / (20 - 19)).clamp(0.0, 1.0);
+            double newOpacity = ((zoom - 18) / (19 - 18)).clamp(0.0, 1.0);
 
             setState(() {
               _overlayOpacity = newOpacity;
@@ -61,7 +69,9 @@ class _OutdoorMapScreenState extends State<OutdoorMapScreen> {
             overlayImages: [
               OverlayImage(
                 bounds: boundsFromPolygon(engineeringBuildingPolygon),
-                imageProvider: const AssetImage('assets/engineering_floor1.png'),
+                imageProvider: const AssetImage(
+                  'assets/engineering_floor1.png',
+                ),
                 opacity: _overlayOpacity,
               ),
             ],

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'screens/outdoor_map_screen.dart';
 
+// Run the CampusMapApp widget
 void main() => runApp(const CampusMapApp());
 
 class CampusMapApp extends StatelessWidget {

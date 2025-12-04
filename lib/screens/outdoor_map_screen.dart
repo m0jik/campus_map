@@ -12,7 +12,8 @@ class OutdoorMapScreen extends StatefulWidget {
 
 class _OutdoorMapScreenState extends State<OutdoorMapScreen> {
   double _overlayOpacity = 0.0;
-
+  
+  // Set the bounding box from the engineering building
   LatLngBounds boundsFromPolygon(List<LatLng> polygon) {
     final minLat = polygon
         .map((p) => p.latitude)
@@ -31,15 +32,20 @@ class _OutdoorMapScreenState extends State<OutdoorMapScreen> {
 
   @override
   Widget build(BuildContext context) {
+    // Longitutde/latittude coordinates for engineering building
     final LatLng siueCenter = const LatLng(38.7964, -89.9970);
 
     return Scaffold(
+      // Title the map at top of page
       appBar: AppBar(title: const Text('SIUE Campus Map')),
+      // Map widget
       body: FlutterMap(
         options: MapOptions(
+          // Sets the map at siue upon start, limits zoom
           initialCenter: siueCenter,
           initialZoom: 17,
           maxZoom: 22,
+          // Sets the behavior upon map center/zoom change
           onPositionChanged: (camera, hasGesture) {
             final zoom = camera.zoom;
 
@@ -51,12 +57,14 @@ class _OutdoorMapScreenState extends State<OutdoorMapScreen> {
           },
         ),
         children: [
+          // Imports the map textures from the url below
           TileLayer(
             urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
             userAgentPackageName: 'com.example.campus_map',
           ),
           PolygonLayer(
             polygons: [
+              // Sets engineering building polygon details
               Polygon(
                 points: engineeringBuildingPolygon,
                 color: Colors.blue.withValues(alpha: 0.3),
@@ -65,6 +73,7 @@ class _OutdoorMapScreenState extends State<OutdoorMapScreen> {
               ),
             ],
           ),
+          // Internal map of engineering building
           OverlayImageLayer(
             overlayImages: [
               OverlayImage(

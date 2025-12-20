@@ -1,6 +1,5 @@
 import 'package:latlong2/latlong.dart';
 
-// Simple point-in-polygon check
 bool pointInPolygon(LatLng point, List<LatLng> polygon) {
   int intersections = 0;
   for (int i = 0; i < polygon.length; i++) {

@@ -92,3 +92,14 @@ flutter:
   assets:
     - assets/engineering_floor1.png
     - assets/peckhall_floor1.png
+    - assets/library_floor1.png
+    - assets/science_east_floor1.png
+    - assets/science_west_floor1.png
+    - assets/dunhamhall_floor1.png
+    - assets/art_design_west_floor1.png
+    - assets/art_design_east_floor1.png
+    - assets/muc_floor1.png
+    - assets/ssc_floor1.png
+    - assets/rendlemanhall_floor1.png
+    - assets/foundershall_floor1.png
+    - assets/alumnihall_floor1.png

@@ -58,7 +58,6 @@ class _OutdoorMapScreenState extends State<OutdoorMapScreen> {
           ),
           PolygonLayer(
             polygons: [
-              // Sets engineering building polygon details
               Polygon(
                 points: engineeringBuildingPolygon,
                 color: Colors.blue.withValues(alpha: 0.3),
@@ -67,6 +66,72 @@ class _OutdoorMapScreenState extends State<OutdoorMapScreen> {
               ),
               Polygon(
                 points: peckHallPolygon,
+                color: Colors.blue.withValues(alpha: 0.3),
+                borderColor: Colors.blue,
+                borderStrokeWidth: 3,
+              ),
+              Polygon(
+                points: libraryPolygon,
+                color: Colors.blue.withValues(alpha: 0.3),
+                borderColor: Colors.blue,
+                borderStrokeWidth: 3,
+              ),
+              Polygon(
+                points: scienceEastPolygon,
+                color: Colors.blue.withValues(alpha: 0.3),
+                borderColor: Colors.blue,
+                borderStrokeWidth: 3,
+              ),
+              Polygon(
+                points: scienceWestPolygon,
+                color: Colors.blue.withValues(alpha: 0.3),
+                borderColor: Colors.blue,
+                borderStrokeWidth: 3,
+              ),
+              Polygon(
+                points: dunhamHallPolygon,
+                color: Colors.blue.withValues(alpha: 0.3),
+                borderColor: Colors.blue,
+                borderStrokeWidth: 3,
+              ),
+              Polygon(
+                points: artDesignWestPolygon,
+                color: Colors.blue.withValues(alpha: 0.3),
+                borderColor: Colors.blue,
+                borderStrokeWidth: 3,
+              ),
+              Polygon(
+                points: artDesignEastPolygon,
+                color: Colors.blue.withValues(alpha: 0.3),
+                borderColor: Colors.blue,
+                borderStrokeWidth: 3,
+              ),
+              Polygon(
+                points: mucPolygon,
+                color: Colors.blue.withValues(alpha: 0.3),
+                borderColor: Colors.blue,
+                borderStrokeWidth: 3,
+              ),
+              Polygon(
+                points: sscPolygon,
+                color: Colors.blue.withValues(alpha: 0.3),
+                borderColor: Colors.blue,
+                borderStrokeWidth: 3,
+              ),
+              Polygon(
+                points: rendlemanHallPolygon,
+                color: Colors.blue.withValues(alpha: 0.3),
+                borderColor: Colors.blue,
+                borderStrokeWidth: 3,
+              ),
+              Polygon(
+                points: foundersHallPolygon,
+                color: Colors.blue.withValues(alpha: 0.3),
+                borderColor: Colors.blue,
+                borderStrokeWidth: 3,
+              ),
+              Polygon(
+                points: alumniHallPolygon,
                 color: Colors.blue.withValues(alpha: 0.3),
                 borderColor: Colors.blue,
                 borderStrokeWidth: 3,
@@ -89,7 +154,83 @@ class _OutdoorMapScreenState extends State<OutdoorMapScreen> {
                   'assets/peckhall_floor1.png'
                 ),
                 opacity: _overlayOpacity,
-              )
+              ),
+              OverlayImage(
+               bounds: boundsFromPolygon(libraryPolygon),
+               imageProvider: const AssetImage(
+                 'assets/library_floor1.png'
+               ),
+               opacity: _overlayOpacity,
+              ),
+              OverlayImage(
+                bounds: boundsFromPolygon(scienceEastPolygon),
+                imageProvider: const AssetImage(
+                  'assets/science_east_floor1.png'
+                ),
+                opacity: _overlayOpacity,
+              ),
+              OverlayImage(bounds: boundsFromPolygon(scienceWestPolygon),
+                imageProvider: const AssetImage(
+                  'assets/science_west_floor1.png'
+                ),
+                opacity: _overlayOpacity,
+              ),
+              OverlayImage(
+                bounds: boundsFromPolygon(dunhamHallPolygon),
+                imageProvider: const AssetImage(
+                  'assets/dunhamhall_floor1.png'
+                ),
+                opacity: _overlayOpacity,
+              ),
+              OverlayImage(
+                bounds: boundsFromPolygon(artDesignWestPolygon),
+                imageProvider: const AssetImage(
+                  'assets/art_design_west_floor1.png'
+                ),
+                opacity: _overlayOpacity,
+              ),
+              OverlayImage(
+                bounds: boundsFromPolygon(artDesignEastPolygon),
+                imageProvider: const AssetImage(
+                  'assets/art_design_east_floor1.png'
+                ),
+                opacity: _overlayOpacity,
+              ),
+              OverlayImage(
+                bounds: boundsFromPolygon(mucPolygon),
+                imageProvider: const AssetImage(
+                  'assets/muc_floor1.png'
+                ),
+                opacity: _overlayOpacity,
+              ),
+              OverlayImage(
+                bounds: boundsFromPolygon(sscPolygon),
+                imageProvider: const AssetImage(
+                  'assets/ssc_floor1.png'
+                ),
+                opacity: _overlayOpacity,
+              ),
+              OverlayImage(
+                bounds: boundsFromPolygon(rendlemanHallPolygon),
+                imageProvider: const AssetImage(
+                  'assets/rendlemanhall_floor1.png'
+                ),
+                opacity: _overlayOpacity,
+              ),
+              OverlayImage(
+                bounds: boundsFromPolygon(foundersHallPolygon),
+                imageProvider: const AssetImage(
+                  'assets/foundershall_floor1.png'
+                ),
+                opacity: _overlayOpacity,
+              ),
+              OverlayImage(
+                bounds: boundsFromPolygon(alumniHallPolygon),
+                imageProvider: const AssetImage(
+                  'assets/alumnihall_floor1.png'
+                ),
+                opacity: _overlayOpacity
+              ),
             ],
           ),
         ],
